@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {useParams} from 'react-router';
 import './style.css';
 import axios from 'axios';
+import obiwan from './img/ObiWan.jpg'
 
 const People = (props) => {
     const [people, setPeople] = useState({});
@@ -22,8 +23,10 @@ const People = (props) => {
   return (
             <div>
               {people.length === 0?
-              <h3>These aren't the droids you're looking for</h3>:
-
+              <div>
+                <img src={obiwan} alt='Obi-Wan'></img>
+                <h1>These aren't the droids you're looking for</h1>
+              </div>:
               <div>
                 <h1>{people.name}</h1>
                 <p>Height: {people.height} cm</p>
